@@ -11,7 +11,7 @@
         <!--Daily Journal-->
         <scene sceneID="Amf-xQ-LC1">
             <objects>
-                <tableViewController id="BR4-Lj-aeT" customClass="DailyJournalTableViewController" customModule="Daily_Journal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="BR4-Lj-aeT" customClass="EntriesTableViewController" customModule="Daily_Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L39-oe-AZn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,31 +35,31 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="zxJ-ZI-u0D"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="N1w-2m-JY1">
                             <connections>
-                                <segue destination="m7u-yr-InD" kind="show" id="hB3-f0-4gz"/>
+                                <segue destination="m7u-yr-InD" kind="show" identifier="segueToEntry" id="hB3-f0-4gz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="m7u-yr-InD" kind="show" identifier="notes" id="p01-Q4-lYK"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAa-40-SpG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1684.057971014493" y="83.705357142857139"/>
         </scene>
-        <!--Daily Journal View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="jIj-YE-r71">
             <objects>
-                <viewController id="m7u-yr-InD" customClass="DailyJournalViewController" customModule="Daily_Journal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m7u-yr-InD" customClass="EntryViewController" customModule="Daily_Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kch-EO-Kv6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="t7X-aP-18d">
-                                <rect key="frame" x="47" y="108" width="320" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="w4w-da-yTf">
+                                <rect key="frame" x="47" y="108" width="320" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="IYE-ZN-90j"/>
+                                </constraints>
                             </datePicker>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QJD-w0-82Q">
-                                <rect key="frame" x="20" y="344" width="374" height="498"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="80N-Fa-g5L">
+                                <rect key="frame" x="20" y="228" width="374" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -70,23 +70,30 @@
                         <viewLayoutGuide key="safeArea" id="o2m-NH-aka"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="o2m-NH-aka" firstAttribute="bottom" secondItem="QJD-w0-82Q" secondAttribute="bottom" constant="20" id="9tP-nR-w3d"/>
-                            <constraint firstItem="o2m-NH-aka" firstAttribute="trailing" secondItem="QJD-w0-82Q" secondAttribute="trailing" constant="20" id="dzF-cJ-42H"/>
-                            <constraint firstItem="QJD-w0-82Q" firstAttribute="leading" secondItem="o2m-NH-aka" secondAttribute="leading" constant="20" id="eSY-dj-iA5"/>
-                            <constraint firstItem="QJD-w0-82Q" firstAttribute="top" secondItem="t7X-aP-18d" secondAttribute="bottom" constant="20" id="fA7-ov-ABI"/>
-                            <constraint firstItem="t7X-aP-18d" firstAttribute="top" secondItem="o2m-NH-aka" secondAttribute="top" constant="20" id="lmG-jX-plT"/>
-                            <constraint firstItem="t7X-aP-18d" firstAttribute="centerX" secondItem="Kch-EO-Kv6" secondAttribute="centerX" id="rDN-O5-qbH"/>
+                            <constraint firstItem="80N-Fa-g5L" firstAttribute="leading" secondItem="o2m-NH-aka" secondAttribute="leading" constant="20" id="Bnn-wX-pC6"/>
+                            <constraint firstItem="o2m-NH-aka" firstAttribute="trailing" secondItem="80N-Fa-g5L" secondAttribute="trailing" constant="20" id="RO3-2S-JCa"/>
+                            <constraint firstItem="80N-Fa-g5L" firstAttribute="top" secondItem="w4w-da-yTf" secondAttribute="bottom" constant="20" id="dhi-dZ-dLI"/>
+                            <constraint firstItem="w4w-da-yTf" firstAttribute="centerX" secondItem="Kch-EO-Kv6" secondAttribute="centerX" id="m7z-lw-5bq"/>
+                            <constraint firstItem="o2m-NH-aka" firstAttribute="bottom" secondItem="80N-Fa-g5L" secondAttribute="bottom" constant="20" id="spr-Q7-AiR"/>
+                            <constraint firstItem="w4w-da-yTf" firstAttribute="top" secondItem="o2m-NH-aka" secondAttribute="top" constant="20" id="xcG-yu-g6d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gdw-bK-mbc">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="trash" id="LWh-Qb-131">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="deleteEntry:" destination="m7u-yr-InD" id="5fQ-Pp-IUn"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="w4w-da-yTf" id="7ub-LU-Ghk"/>
+                        <outlet property="entryTextView" destination="80N-Fa-g5L" id="eK4-67-y8M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxQ-qv-cnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2419" y="84"/>
+            <point key="canvasLocation" x="2418.840579710145" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BPA-Hg-Uwu">
@@ -107,9 +114,6 @@
             <point key="canvasLocation" x="773.91304347826087" y="83.705357142857139"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="hB3-f0-4gz"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

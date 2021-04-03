@@ -7,27 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0220472617AC8D00D1EA9F /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0220462617AC8D00D1EA9F /* EntriesTableViewController.swift */; };
+		BA02204A2617ACBD00D1EA9F /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0220492617ACBD00D1EA9F /* EntryViewController.swift */; };
+		BA0220502617B85800D1EA9F /* Daily_Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA02204E2617B85800D1EA9F /* Daily_Journal.xcdatamodeld */; };
+		BA0220552617B93900D1EA9F /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0220532617B93900D1EA9F /* Entry+CoreDataClass.swift */; };
+		BA0220562617B93900D1EA9F /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0220542617B93900D1EA9F /* Entry+CoreDataProperties.swift */; };
 		BA72A0022616929D0076851C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA72A0012616929D0076851C /* AppDelegate.swift */; };
 		BA72A0042616929D0076851C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA72A0032616929D0076851C /* SceneDelegate.swift */; };
 		BA72A0092616929D0076851C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA72A0072616929D0076851C /* Main.storyboard */; };
-		BA72A00C2616929D0076851C /* Daily_Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA72A00A2616929D0076851C /* Daily_Journal.xcdatamodeld */; };
 		BA72A00E2616929E0076851C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA72A00D2616929E0076851C /* Assets.xcassets */; };
 		BA72A0112616929E0076851C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA72A00F2616929E0076851C /* LaunchScreen.storyboard */; };
-		BA72A01B261693580076851C /* DailyJournalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA72A01A261693580076851C /* DailyJournalTableViewController.swift */; };
-		BA72A01F2616982B0076851C /* DailyJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA72A01E2616982B0076851C /* DailyJournalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0220462617AC8D00D1EA9F /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		BA0220492617ACBD00D1EA9F /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		BA02204F2617B85800D1EA9F /* Daily_Journal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daily_Journal.xcdatamodel; sourceTree = "<group>"; };
+		BA0220532617B93900D1EA9F /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BA0220542617B93900D1EA9F /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BA729FFE2616929D0076851C /* Daily Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA72A0012616929D0076851C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA72A0032616929D0076851C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BA72A0082616929D0076851C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BA72A00B2616929D0076851C /* Daily_Journal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Daily_Journal.xcdatamodel; sourceTree = "<group>"; };
 		BA72A00D2616929E0076851C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA72A0102616929E0076851C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA72A0122616929E0076851C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA72A01A261693580076851C /* DailyJournalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyJournalTableViewController.swift; sourceTree = "<group>"; };
-		BA72A01E2616982B0076851C /* DailyJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyJournalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +66,15 @@
 			children = (
 				BA72A0012616929D0076851C /* AppDelegate.swift */,
 				BA72A0032616929D0076851C /* SceneDelegate.swift */,
-				BA72A01E2616982B0076851C /* DailyJournalViewController.swift */,
-				BA72A01A261693580076851C /* DailyJournalTableViewController.swift */,
+				BA0220492617ACBD00D1EA9F /* EntryViewController.swift */,
+				BA0220462617AC8D00D1EA9F /* EntriesTableViewController.swift */,
+				BA0220532617B93900D1EA9F /* Entry+CoreDataClass.swift */,
+				BA0220542617B93900D1EA9F /* Entry+CoreDataProperties.swift */,
 				BA72A0072616929D0076851C /* Main.storyboard */,
 				BA72A00D2616929E0076851C /* Assets.xcassets */,
 				BA72A00F2616929E0076851C /* LaunchScreen.storyboard */,
 				BA72A0122616929E0076851C /* Info.plist */,
-				BA72A00A2616929D0076851C /* Daily_Journal.xcdatamodeld */,
+				BA02204E2617B85800D1EA9F /* Daily_Journal.xcdatamodeld */,
 			);
 			path = "Daily Journal";
 			sourceTree = "<group>";
@@ -144,10 +150,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA72A0022616929D0076851C /* AppDelegate.swift in Sources */,
-				BA72A01B261693580076851C /* DailyJournalTableViewController.swift in Sources */,
-				BA72A01F2616982B0076851C /* DailyJournalViewController.swift in Sources */,
+				BA0220562617B93900D1EA9F /* Entry+CoreDataProperties.swift in Sources */,
 				BA72A0042616929D0076851C /* SceneDelegate.swift in Sources */,
-				BA72A00C2616929D0076851C /* Daily_Journal.xcdatamodeld in Sources */,
+				BA0220472617AC8D00D1EA9F /* EntriesTableViewController.swift in Sources */,
+				BA02204A2617ACBD00D1EA9F /* EntryViewController.swift in Sources */,
+				BA0220552617B93900D1EA9F /* Entry+CoreDataClass.swift in Sources */,
+				BA0220502617B85800D1EA9F /* Daily_Journal.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,12 +359,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BA72A00A2616929D0076851C /* Daily_Journal.xcdatamodeld */ = {
+		BA02204E2617B85800D1EA9F /* Daily_Journal.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BA72A00B2616929D0076851C /* Daily_Journal.xcdatamodel */,
+				BA02204F2617B85800D1EA9F /* Daily_Journal.xcdatamodel */,
 			);
-			currentVersion = BA72A00B2616929D0076851C /* Daily_Journal.xcdatamodel */;
+			currentVersion = BA02204F2617B85800D1EA9F /* Daily_Journal.xcdatamodel */;
 			path = Daily_Journal.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
