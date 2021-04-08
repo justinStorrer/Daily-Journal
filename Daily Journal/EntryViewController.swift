@@ -7,9 +7,10 @@
 
 import UIKit
 
-class EntryViewController: UIViewController {
+class EntryViewController: UIViewController, UITextViewDelegate {
 
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var entryTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -18,29 +19,37 @@ class EntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
         if entry == nil {
-            // Create
-        } else {
-            // Fill in infor about existing entry
-            entryTextView.text = entry!.text
-            if let dateToBeShown = entry!.date {
-                datePicker.date = dateToBeShown
+            if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                entry = Entry(context: context)
+                entry?.date = datePicker.date
+                entry?.text = "Today was ..."
+                entryTextView.becomeFirstResponder()
             }
         }
+         
+        entryTextView.text = entry?.text
+        if let dateToBeShown = entry?.date {
+            datePicker.date = dateToBeShown
+        }
+        
+        entryTextView.delegate = self
+            
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        // Make an entry
-        if entry == nil {
-            if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                let entry = Entry(context: context)
-                entry.date = datePicker.date
-                entry.text = entryTextView.text
-            }
-        }
-        
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
-
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            bottomConstraint.constant = keyboardHeight
+        }
     }
     
     @IBAction func deleteEntry(_ sender: Any) {
@@ -53,5 +62,16 @@ class EntryViewController: UIViewController {
         
         navigationController?.popViewController(animated: true)
     }
-
+    
+    func textViewDidChange(_ textView: UITextView) {
+        entry?.text = entryTextView.text
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+    }
+    
+    
+    @IBAction func datePickerChanged(_ sender: Any) {
+        entry?.date = datePicker.date
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+    }
+    
 }
